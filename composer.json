@@ -1,0 +1,20 @@
+{
+  "name": "debugteam/mysqliwrapper",
+  "description": "Wrapper class for MySQLi functions",
+	"keywords": ["MySQLi", "MySQL", "Wrapper", "Migration", "database"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jochen Schultz",
+      "email": "jschultz@php.net"
+    }
+  ],
+  "require": {
+		"php": ">=7.2.0"
+	},
+  "autoload": {
+    "psr-4": {
+      "Debugteam\\MySQLiWrapper\\": "src"
+    }
+  }
+}
