@@ -27,7 +27,7 @@ class MySQLiWrapper extends MySQLiBase
      * @param $offset
      * @return bool
      */
-    public function dbDataSeek($result, $offset)
+    public function dbDataSeek($result, $offset) : bool
     {
         return mysqli_data_seek($result, $offset);
     }
@@ -37,7 +37,7 @@ class MySQLiWrapper extends MySQLiBase
      * @param $type
      * @return mixed
      */
-    public function dbFetchArray($result, $type)
+    public function dbFetchArray($result, $type) : ?array
     {
         return mysqli_fetch_array($result, $type);
     }
@@ -46,7 +46,7 @@ class MySQLiWrapper extends MySQLiBase
      * @param $result
      * @return mixed
      */
-    public function dbFetchAssoc($result)
+    public function dbFetchAssoc($result) : ?array
     {
         return mysqli_fetch_assoc($result);
     }
@@ -55,7 +55,7 @@ class MySQLiWrapper extends MySQLiBase
      * @param $result
      * @return mixed
      */
-    public function dbFetchLengths($result)
+    public function dbFetchLengths($result) // : array|bool
     {
         return mysqli_fetch_lengths($result);
     }
@@ -66,7 +66,7 @@ class MySQLiWrapper extends MySQLiBase
      * @param $params
      * @return mixed
      */
-    public function dbFetchObject($result, $class, $params)
+    public function dbFetchObject($result, $class, $params) : ?object
     {
         return mysqli_fetch_object($result, $class, $params);
     }
@@ -75,7 +75,7 @@ class MySQLiWrapper extends MySQLiBase
      * @param $result
      * @return mixed
      */
-    public function dbFetchRow($result)
+    public function dbFetchRow($result) : ?array
     {
         return mysqli_fetch_row($result);
     }
@@ -85,7 +85,7 @@ class MySQLiWrapper extends MySQLiBase
      * @param $number
      * @return mixed
      */
-    public function dbFieldSeek($result, $number)
+    public function dbFieldSeek($result, $number) : bool
     {
         return mysqli_field_seek($result, $number);
     }
@@ -94,7 +94,7 @@ class MySQLiWrapper extends MySQLiBase
      * @param $result
      * @return mixed
      */
-    public function dbFreeResult($result)
+    public function dbFreeResult($result) : void
     {
         return mysqli_free_result($result);
     }
@@ -103,7 +103,7 @@ class MySQLiWrapper extends MySQLiBase
      * @param $link
      * @return mixed
      */
-    public function dbInsertId($link)
+    public function dbInsertId($link) // : int|string
     {
         return mysqli_insert_id($link);
     }
@@ -112,7 +112,7 @@ class MySQLiWrapper extends MySQLiBase
      * @param $result
      * @return mixed
      */
-    public function dbNumRows($result)
+    public function dbNumRows($result) : int
     {
         return mysqli_num_rows($result);
     }
@@ -132,7 +132,7 @@ class MySQLiWrapper extends MySQLiBase
      * @param $escapeString
      * @return string
      */
-    public function dbRealEscapeStr($link, $escapeString)
+    public function dbRealEscapeStr($link, $escapeString) : string
     {
         return mysqli_real_escape_string($link, $escapeString);
     }
@@ -141,7 +141,7 @@ class MySQLiWrapper extends MySQLiBase
      * @param $link
      * @return mixed
      */
-    public function dbThreadId($link)
+    public function dbThreadId($link) : int
     {
         return mysqli_thread_id($link);
     }

@@ -92,7 +92,7 @@ class MySQLiBase
      * @param $link
      * @return mixed
      */
-    public function dbErrno($link)
+    public function dbErrno($link) : int
     {
         return mysqli_errno($link);
     }
@@ -101,7 +101,7 @@ class MySQLiBase
      * @param $link
      * @return mixed
      */
-    public function dbError($link)
+    public function dbError($link) : string
     {
         return mysqli_error($link);
     }
@@ -109,7 +109,7 @@ class MySQLiBase
     /**
      * @return mixed
      */
-    public function dbGetClientInfo()
+    public function dbGetClientInfo() : string
     {
         return mysqli_get_client_info();
     }
@@ -127,7 +127,7 @@ class MySQLiBase
      * @param $link
      * @return mixed
      */
-    public function dbGetProtoInfo($link)
+    public function dbGetProtoInfo($link) : int
     {
         return mysqli_get_proto_info($link);
     }
@@ -136,7 +136,7 @@ class MySQLiBase
      * @param $link
      * @return mixed
      */
-    public function dbGetServerInfo($link)
+    public function dbGetServerInfo($link) : string
     {
         return mysqli_get_server_info($link);
     }
@@ -145,7 +145,7 @@ class MySQLiBase
      * @param $link
      * @return mixed
      */
-    public function dbInfo($link)
+    public function dbInfo($link) : string
     {
         return mysqli_info($link);
     }
@@ -155,7 +155,7 @@ class MySQLiBase
      * @param $database
      * @return mixed
      */
-    public function dbSelectDb($link, $database)
+    public function dbSelectDb($link, $database) : bool
     {
         return mysqli_select_db($link, $database);
     }
@@ -165,7 +165,7 @@ class MySQLiBase
      * @param $charset
      * @return mixed
      */
-    public function dbSetCharset($link, $charset)
+    public function dbSetCharset($link, $charset) : bool
     {
         return mysqli_set_charset($link, $charset);
     }
@@ -174,7 +174,7 @@ class MySQLiBase
      * @param $link
      * @return mixed
      */
-    public function dbPing($link)
+    public function dbPing($link) : bool
     {
         return mysqli_ping($link);
     }
@@ -183,7 +183,7 @@ class MySQLiBase
      * @param $link
      * @return array
      */
-    public function dbStat($link)
+    public function dbStat($link) // : bool|string
     {
         return mysqli_stat($link);
     }
